@@ -1,5 +1,10 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import "./registerServiceWorker";
+import { store, key } from "./store/store";
 
-createApp(App).mount("#app");
+const app = createApp(App);
+
+app.use(store, key);
+
+app.mount("#app");
